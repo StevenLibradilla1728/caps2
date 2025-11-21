@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.radius,
     padding: 16,
     alignItems: 'center',
-    justifyContent: 'center', // Center content vertically
+    justifyContent: 'center',
     width: '100%',
-    height: 150, // FIXED HEIGHT for uniformity
+    height: 150, 
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
