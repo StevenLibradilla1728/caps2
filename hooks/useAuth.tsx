@@ -3,8 +3,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useRouter, useSegments } from 'expo-router';
 import { setItemAsync, getItemAsync, deleteItemAsync } from 'expo-secure-store';
 import { 
-  STATIC_GUEST_PROFILE, // <-- FIX: Using correct variable name
-  STATIC_GUEST_GARDEN,  // <-- FIX: Using correct variable name
+  STATIC_GUEST_PROFILE, 
+  STATIC_GUEST_GARDEN,  
   GUEST_ACHIEVEMENTS,
   GUEST_QUIZ_DATA,
   GuestProfile,
