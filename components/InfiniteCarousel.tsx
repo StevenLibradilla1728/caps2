@@ -4,7 +4,7 @@ import { View, StyleSheet, FlatList, Dimensions } from 'react-native';
 import { SIZES } from '../constants/Theme';
 
 const { width } = Dimensions.get('window');
-// Card width is 70% of screen, but we can make it a prop
+
 const DEFAULT_CARD_WIDTH = width * 0.8;
 const DEFAULT_CARD_SPACING = SIZES.padding;
 const DEFAULT_SNAP_INTERVAL = DEFAULT_CARD_WIDTH + DEFAULT_CARD_SPACING;
@@ -34,20 +34,20 @@ export default function InfiniteCarousel({
   const [loopedData, setLoopedData] = useState<any[]>([]);
   const [baseLength, setBaseLength] = useState(0);
 
-  // This effect runs when your API data (prop) changes
+  // runs when API data (prop) changes
   useEffect(() => {
     if (data && data.length > 0) {
-      setLoopedData([...data, ...data, ...data]); // Triple the data
+      setLoopedData([...data, ...data, ...data]);
       setBaseLength(data.length);
-      activeIndexRef.current = data.length; // Start in the middle block
+      activeIndexRef.current = data.length; 
 
-      // Go to the middle block
+      
       setTimeout(() => {
         flatListRef.current?.scrollToIndex({
           index: data.length,
           animated: false,
         });
-      }, 50); // Small delay to ensure render
+      }, 50); // Small delay
 
       if (autoScroll) startAutoScroll(data.length);
     }
@@ -66,12 +66,12 @@ export default function InfiniteCarousel({
         animated: true,
       });
 
-      // --- The "Infinite" magic ---
+      // --- Infinite magic ---
       if (newIndex >= length * 2) {
-        // We've reached the end of the 2nd block
+        
         setTimeout(() => {
           flatListRef.current?.scrollToIndex({
-            index: length, // Jump back to start of 2nd block
+            index: length, 
             animated: false,
           });
           activeIndexRef.current = length;
