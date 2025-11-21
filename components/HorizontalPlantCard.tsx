@@ -2,9 +2,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useTheme, FONTS, SIZES } from '../constants/Theme';
-import { API_BASE_URL } from '../constants/Config'; // 1. Import the server URL
+import { API_BASE_URL } from '../constants/Config'; 
 
-// 2. Add the helper function to build the full URL
+// Add the helper function to build the full URL
 const getFullUrl = (path: string | null) => {
     if (!path) return 'https://placehold.co/100x100/eeeeee/aaaaaa?text=No+Image';
     if (path.startsWith('http')) return path;
@@ -27,7 +27,7 @@ export default function HorizontalPlantCard({ item, onPress }: { item: any, onPr
 
 const styles = StyleSheet.create({
   card: {
-    width: '105%', // Will be set by carousel wrapper
+    width: '105%', 
     height: 90,
     borderRadius: SIZES.radius * 1.5,
     padding: 4,
