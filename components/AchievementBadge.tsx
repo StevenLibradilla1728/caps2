@@ -23,13 +23,13 @@ export default function AchievementBadge({ item, onPress }: Props) {
   const opacity = isUnlocked ? 1 : 0.7;
 
   return (
-    // 1. The Touchable is the 50% "slot" with padding
+    
     <TouchableOpacity 
       style={styles.container}
       onPress={onPress}
-      disabled={!onPress || !isUnlocked} // Disable press if no handler or not unlocked
+      disabled={!onPress || !isUnlocked} 
     >
-      {/* 2. The <View> is the visible card */}
+      
       <View style={[
         styles.card, 
         { backgroundColor: cardColor, opacity: opacity },
@@ -49,8 +49,8 @@ export default function AchievementBadge({ item, onPress }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: '50%', // <-- creates the 2-column grid
-    padding: 4,     // <-- creates the gap between cards
+    width: '50%', 
+    padding: 4,     
   },
   card: {
     padding: 16,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
-    width: '100%', // Take up the full 50% slot
+    width: '100%', 
   },
   name: {
     ...FONTS.h3,
